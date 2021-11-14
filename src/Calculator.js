@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import TemperatureInput from "./TemperatureInput";
 import BoilingVerdict from "./BoilingVerdict";
 
+import classes from './Calculator.module.css';
+
 const tryConvert = (temperature, convert) => {
     const input = parseFloat(temperature);
     if (Number.isNaN(input)) return '';
@@ -38,17 +40,21 @@ const Calculator = (props) => {
 
     return (
         <React.Fragment>
-            <TemperatureInput
-                scale='c'
-                temperature={celsius}
-                onTemperatureChange={handleCelsiusChange}
-            />
-            <TemperatureInput
-                scale='f'
-                temperature={fahrenheit}
-                onTemperatureChange={handleFahrenheitChange}
-            />
-            <BoilingVerdict celsius={parseFloat(celsius)} />
+            <div className={classes.container}>
+                <form className={classes.form}>
+                    <TemperatureInput
+                        scale='c'
+                        temperature={celsius}
+                        onTemperatureChange={handleCelsiusChange}
+                    />
+                    <TemperatureInput
+                        scale='f'
+                        temperature={fahrenheit}
+                        onTemperatureChange={handleFahrenheitChange}
+                    />
+                </form>
+                <BoilingVerdict celsius={parseFloat(celsius)} />
+            </div>
         </React.Fragment>
     );
 }

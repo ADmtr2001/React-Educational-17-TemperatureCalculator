@@ -1,0 +1,10 @@
+.field {
+    width: 400px;
+    text-align: center;
+}
+
+.field input {
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}

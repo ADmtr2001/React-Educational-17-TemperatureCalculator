@@ -1,3 +1,9 @@
 .container {
     width: 700px;
+    margin: 0 auto;
+    margin-top: 200px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
